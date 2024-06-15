@@ -14,6 +14,10 @@ dependencies = [
     "datasets",
     "fire",
     "wandb",
+    "spacy",
+    "benepar",
+    "plotly",
+    "kaleido",
 ]
 
 [tool.setuptools.packages.find]
