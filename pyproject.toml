@@ -11,7 +11,6 @@ dependencies = [
     "torch==2.1.2",
     "transformers==4.37.0",
     "accelerate==0.26.1",
-    "flash-attn==2.5.7",
     "datasets",
     "fire",
     "wandb",
