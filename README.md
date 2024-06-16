@@ -16,6 +16,16 @@ pip install -e .
 pip install flash-attn==2.5.7
 ```
 
+## Prepare Unlabeled Texts
+
+Download [C4 dataset](https://huggingface.co/datasets/allenai/c4) and decompress text files in `en` folder. Select candidate texts using the following scripts:
+
+```bash
+python re_instruct/data/prepare_unlabeled_texts.py \
+    --c4_en_dir <path_to_c4_en_folder> \
+    --output_dir <output_dir>
+```
+
 ## Sunburst Visualization
 
 [Installing required dependency](https://github.com/nikitakit/self-attentive-parser#installation) and visualize instructions using the following scripts:
