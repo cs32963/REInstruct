@@ -26,6 +26,17 @@ python re_instruct/data/prepare_unlabeled_texts.py \
     --output_dir <output_dir>
 ```
 
+## Filter Rewritten Responses
+
+To filter out failed rewritten responses:
+
+```bash
+python re_instruct/data/filter_rewritten.py \
+    --data_path <path_to_data_for_filtering> \
+    --output_dir <output_dir> \
+    --remove_refusal True
+```
+
 ## Sunburst Visualization
 
 [Installing required dependency](https://github.com/nikitakit/self-attentive-parser#installation) and visualize instructions using the following scripts:
