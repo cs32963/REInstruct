@@ -14,7 +14,7 @@ conda activate re_instruct
 # editable install
 pip install -e .
 
-# install flash attention independently
+# install flash attention separately
 pip install flash-attn==2.5.7
 ```
 
