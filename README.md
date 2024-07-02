@@ -57,6 +57,20 @@ torchrun --nproc_per_node=8 --master_port=2404 re_instruct/train/sft.py \
     --logging_steps 1
 ```
 
+## Inference
+
+Example script for inference using 8 A100-80G GPUs:
+
+```bash
+accelerate launch --num_processes=8 re_instruct/inference/generate_output.py \
+    --data_path data/dummy_instruction_data.json \
+    --model_name_or_path <path_to_trained_checkpoint> \
+    --output_dir exp_data/dummy_inference \
+    --prompt_type <prompt_type> \
+    --max_new_tokens 512 \
+    --do_sample False
+```
+
 ## Filter Rewritten Responses
 
 To filter out failed rewritten responses:
