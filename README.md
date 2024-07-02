@@ -28,6 +28,35 @@ python re_instruct/data/prepare_unlabeled_texts.py \
     --output_dir <output_dir>
 ```
 
+## Training
+
+Example script for finetuning using 8 A100-80G GPUs:
+
+```bash
+torchrun --nproc_per_node=8 --master_port=2404 re_instruct/train/sft.py \
+    --data_path data/dummy_instruction_data.json \
+    --model_name_or_path huggyllama/llama-7b \
+    --model_max_length 2048 \
+    --output_dir exps/dummy_sft \
+    --max_steps 100 \
+    --per_device_train_batch_size 1 \
+    --gradient_accumulation_steps 16 \
+    --bf16 True \
+    --evaluation_strategy no \
+    --save_strategy steps \
+    --save_steps 50 \
+    --save_only_model True \
+    --optim adamw_torch \
+    --learning_rate 2e-5 \
+    --lr_scheduler_type constant \
+    --fsdp "full_shard auto_wrap" \
+    --tf32 True \
+    --gradient_checkpointing True \
+    --report_to wandb \
+    --run_name dummy_sft \
+    --logging_steps 1
+```
+
 ## Filter Rewritten Responses
 
 To filter out failed rewritten responses:
