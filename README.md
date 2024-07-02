@@ -70,7 +70,7 @@ python re_instruct/data/filter_rewritten.py \
 
 ## Sunburst Visualization
 
-[Installing required dependency](https://github.com/nikitakit/self-attentive-parser#installation) and visualize instructions using the following scripts:
+[Install required dependency](https://github.com/nikitakit/self-attentive-parser#installation) and visualize instructions using the following scripts:
 
 ```bash
 python re_instruct/data/sunburst_visualize.py \
